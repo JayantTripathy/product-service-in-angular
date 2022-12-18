@@ -1,0 +1,29 @@
+<app-filtered-list [all]="getAllCricketerListCount()" [cricketersList]="getAllCricketerList()"
+  (countRadioButtonSelectionChanged)="onCricketersCountRadioButtonChange($event)"></app-filtered-list>
+
+<table class='table table-stripped'>
+  <thead>
+    <tr>
+      <th>No</th>
+      <th>Name</th>
+      <th>No. of Hundreds</th>
+      <th>Country</th>
+      <th>IsEven</th>
+      <th>IsOdd</th>
+    </tr>
+  </thead>
+  <tbody>
+    <ng-container *ngFor="let cricketer of cricketerList;let isEven = even; let isOdd = odd; trackBy:identify;">
+      <tr *ngIf="selectedCricketersCountRadioButton=='All' ||
+      selectedCricketersCountRadioButton==cricketer.country">
+        <td>{{cricketer.id}}</td>
+        <td>{{cricketer.name}}</td>
+        <td>{{cricketer.hundreds}}</td>
+        <td>{{cricketer.country}}</td>
+        <td>{{isEven}}</td>
+        <td>{{isOdd}}</td>
+      </tr>
+    </ng-container>
+  </tbody>
+</table>
+<button (click)="getNewCricketers()">More Items</button>

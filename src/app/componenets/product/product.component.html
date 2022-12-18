@@ -1,0 +1,11 @@
+<h5>Product Details Page</h5>
+<div class="card-deck mt-3">
+  <div class="card" style="width: 18rem;" *ngFor="let prod of products">
+    <img class="card-img-top" src="../../../assets/images/{{prod.imageName}}" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{prod.name}}</h5>
+      <p class="card-text">{{prod.description}}</p>
+    </div>
+   <span style="padding: 10px;"> Price  <strong>{{prod.price | currency:'INR':true:'4.2-2'}} </strong></span>
+  </div>
+</div>

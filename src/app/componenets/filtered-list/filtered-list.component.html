@@ -1,0 +1,28 @@
+<div class="custom">
+    <span class="radioClass">Cricketers : </span>
+    <input type="radio" name="options" value="All"
+    [(ngModel)]="selectedRadioButtonValue"
+    (change)="RadioButtonSelectionChange()" />
+    <span class="radioClass">{{"All(" + all + ")"}}</span>
+    <span style="border: 1px solid gray;">
+        <input name="options" type="radio" class="ml-2" value="India"
+        [(ngModel)]="selectedRadioButtonValue"
+        (change)="RadioButtonSelectionChange()">
+        <span class="radioClass">{{"India(" + getCricketerListByCountry('India') + ")"}}</span>
+
+        <input name="options" type="radio" class="ml-2" value="Australia"
+        [(ngModel)]="selectedRadioButtonValue"
+        (change)="RadioButtonSelectionChange()">
+        <span class="radioClass">{{"Australia(" + getCricketerListByCountry('Australia') + ")"}}</span>
+        
+        <input name="options" type="radio" class="ml-2" value="Newzealand"
+        [(ngModel)]="selectedRadioButtonValue"
+        (change)="RadioButtonSelectionChange()">
+        <span class="radioClass">{{"NewZealand(" + getCricketerListByCountry('Newzealand') + ")"}}</span>
+       
+        <input name="options" type="radio" class="ml-2" value="Pakistan"
+        [(ngModel)]="selectedRadioButtonValue"
+        (change)="RadioButtonSelectionChange()">
+        <span class="radioClass">{{"Pakistan(" + getCricketerListByCountry('Pakistan') + ")"}}</span>
+    </span>
+</div>
